@@ -1,121 +1,451 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Reset */
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-    font-family: Arial, sans-serif;
+    font-family:'Inter',sans-serif;
+    color:#0d1b2a;
+    
 }
 
-/* Common Container */
+img{
+    max-width:100%;
+    display:block;
+}
+
 .container{
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    width:90%;
+    max-width:1320px;
+    margin:auto;
 }
 
-/* ===================
-   Navbar
-=================== */
+/*NAVBAR*/
 
 header{
-    border-bottom: 1px solid #ddd;
+    border-bottom:1px solid #e5e7eb;
+    background:#fff;
 }
 
 header .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
+    min-height:98px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
 }
 
 .logo{
-    width: 70px;
+    width:70px;
+    flex-shrink:0;
 }
 
 nav ul{
-    display: flex;
-    gap: 25px;
-    list-style: none;
+    list-style:none;
+    display:flex;
+    gap:24px;
 }
 
-nav ul li a{
-    text-decoration: none;
-    color: #555;
-    font-size: 16px;
+nav a{
+    text-decoration:none;
+    color:#575757;
+    font-size:16px;
+    font-weight:500;
 }
 
-nav ul li a:hover{
-    color: #1d4ed8;
+nav a:hover{
+    color:#2563eb;
 }
 
 .register-btn{
-    background-color: #1d4ed8;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
+    background:#1d4ed8;
+    color:#fff;
+    border:none;
+    padding:14px 28px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    flex-shrink:0;
+    display:inline-block
 }
 
-/* ===================
-   Hero Section
-=================== */
+/*HERO*/
 
 .hero{
-    position: relative;
-    height: 700px;
-    overflow: hidden;
+    position:relative;
+    height:786px;
+    overflow:hidden;
 }
 
 .hero-image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-/* Dark Overlay */
-
-.hero::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
 }
-
-/* Content */
 
 .content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:5;
 
-    text-align: center;
-    color: white;
+    text-align:center;
+    color:white;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 80%;
-    max-width: 900px;
+    width:90%;
+    max-width:900px;
 }
 
 .content h1{
-    font-size: 70px;
-    margin-bottom: 20px;
+    font-size:80px;
+    font-weight:800;
+    margin-bottom:25px;
+    line-height:1.1;
+}
+
+.content em{
+    font-style:italic;
 }
 
 .content p{
-    font-size: 22px;
-    line-height: 1.7;
-    margin-bottom: 30px;
+    font-size:22px;
+    line-height:1.8;
+    margin-bottom:40px;
+    color:rgba(255,255,255,.9);
 }
 
 .content .register-btn{
-    width: auto;
-    padding: 15px 40px;
-    font-size: 18px;
+    font-size:20px;
+    padding:18px 45px;
+}
+
+/*SPEAKERS*/
+
+.speakers{
+    padding:80px 0;
+}
+
+.speakers h2{
+    text-align:center;
+    font-size:56px;
+    margin-bottom:60px;
+}
+
+.speaker-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:32px;
+}
+
+.speaker-card{
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    overflow:hidden;
+    background:white;
+}
+
+.speaker-card img{
+    width:100%;
+    height:324px;
+    object-fit:cover;
+}
+
+.speaker-badge{
+    display:inline-block;
+    color:#2563eb;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin:24px 24px 10px;
+}
+
+.speaker-card h3{
+    margin:0 24px;
+    font-size:24px;
+}
+
+.speaker-card p{
+    margin:12px 24px 24px;
+    color:#666;
+}
+
+/*PRICING*/
+
+.pricing{
+    padding:80px 0;
+}
+
+.pricing h2{
+    text-align:center;
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.pricing-subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:50px;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.pricing-card{
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:35px;
+}
+.pricing-card:hover{
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transform:translateY(-5px);
+    transition:0.3s ease;
+}
+
+.pricing-card h4{
+    color:#888;
+    margin-bottom:15px;
+}
+
+.pricing-card h2{
+    text-align:left;
+    font-size:44px;
+    margin-bottom:10px;
+}
+
+.pricing-card p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.pricing-card ul{
+    list-style: disc;
+    margin-bottom:30px;
+}
+
+.pricing-card li{
+    margin-bottom:12px;
+}
+
+.pro-card{
+    background:#0d1b2a;
+    color:white;
+    border:none;
+}
+
+.pro-card p{
+    color:rgba(255,255,255,.8);
+}
+
+.pro-card h4{
+    color:#93c5fd;
+}
+/* =========================
+   EVENT AGENDA SECTION
+========================= */
+
+.agenda {
+    padding: 80px 10%;
+    background: #f8f8f8;
+    text-align: center;
+}
+
+.agenda h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.agenda p {
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.agenda-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.agenda-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px 30px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.agenda-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.agenda-time {
+    min-width: 120px;
+    font-weight: 700;
+    color: #4f46e5;
+    font-size: 1rem;
+}
+
+.agenda-content {
+    text-align: left;
+    flex: 1;
+}
+
+.agenda-content h3 {
+    font-size: 1.1rem;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.agenda-content span {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.agenda-btn {
+    margin-top: 40px;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.agenda-btn:hover {
+    background: #4338ca;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .agenda-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .agenda-time {
+        margin-bottom: 10px;
+    }
+
+    .agenda-content {
+        text-align: center;
+    }
+}
+.testimonials {
+    padding: 80px 10%;
+    background: #f8f9fc;
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background: #fff;
+    width: 320px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+}
+
+.testimonial-card p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonial-card h4 {
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.testimonial-card span {
+    color: #6c63ff;
+    font-size: 0.9rem;
+}
+.footer{
+    background:#111;
+    color:white;
+    padding:60px 20px;
+    text-align:center;
+}
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer h3{
+    margin-bottom:15px;
+}
+
+.footer p{
+    color:#bbb;
+}
+
+.footer-links{
+    margin:25px 0;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#4f46e5;
+}
+
+.copyright{
+    margin-top:20px;
+    font-size:14px;
 }
