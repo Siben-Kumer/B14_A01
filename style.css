@@ -1,54 +1,121 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.container {
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+/* Common Container */
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===================
+   Navbar
+=================== */
+
+header{
+    border-bottom: 1px solid #ddd;
+}
+
+header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 0;
 }
-img.logo {
-    width: 100px;
+
+.logo{
+    width: 70px;
 }
+
 nav ul{
     display: flex;
-    gap: 20px;
+    gap: 25px;
     list-style: none;
 }
-nav a {
+
+nav ul li a{
     text-decoration: none;
-    color: black;
+    color: #555;
     font-size: 16px;
 }
-nav a:hover {
-    color: blue;
+
+nav ul li a:hover{
+    color: #1d4ed8;
 }
-button.register-btn {
-    background-color: blue;
+
+.register-btn{
+    background-color: #1d4ed8;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
+    border-radius: 8px;
     cursor: pointer;
 }
-.hero {
+
+/* ===================
+   Hero Section
+=================== */
+
+.hero{
     position: relative;
-    height: 800px;
+    height: 700px;
+    overflow: hidden;
 }
-.hero-image {
+
+.hero-image{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.content {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+
+/* Dark Overlay */
+
+.hero::before{
+    content: "";
     position: absolute;
-    top: 60%;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+/* Content */
+
+.content{
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     text-align: center;
     color: white;
-    }
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 80%;
+    max-width: 900px;
+}
+
+.content h1{
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.content p{
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.content .register-btn{
+    width: auto;
+    padding: 15px 40px;
+    font-size: 18px;
+}
